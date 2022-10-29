@@ -24,7 +24,7 @@ class Solution {
     }
     public TreeNode solve(int prelo,int prehi,int postlo,int posthi,int []preorder,HashMap<Integer,Integer>map)
     {
-       System.out.println(prelo+"-"+prehi +"/"+postlo+" "+posthi);
+     //  System.out.println(prelo+"-"+prehi +"/"+postlo+" "+posthi);
         if(prelo>prehi || postlo>posthi)
         {
             return null;
