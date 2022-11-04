@@ -1,6 +1,12 @@
 class Solution {
     public TreeNode addOneRow(TreeNode root, int val, int depth) {
-        
+        if(depth==1)
+        {
+            TreeNode newRoot=new TreeNode(val);
+            newRoot.left=root;
+            return newRoot;
+            
+        }
         solve(root,val,depth,2);
         return root;
     }
