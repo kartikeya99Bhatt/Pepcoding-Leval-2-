@@ -11,7 +11,7 @@ public class Solution {
         int cntMinSwap=0;
         for(int i=0;i<n;i++)
         {
-            if(visited[i]==false){
+            if(visited[i]==false && A[i]!=B[i]){
                cntMinSwap+=countSwap(map,B,visited,i,A); 
             }
         }
