@@ -1,6 +1,6 @@
 class Solution {
     public int partitionDisjoint(int[] nums) {
-        int pi=1;
+        int pi=0;
         int mts=nums[0];
         int mtp=nums[0];
         
@@ -9,11 +9,11 @@ class Solution {
             mts=Math.max(nums[i],mts);
             if(nums[i]<mtp)
             {
-                pi=i+1;
+                pi=i;
                 mtp=mts;
             }
         }
         
-        return pi;
+        return (pi+1);
     }
 }
