@@ -1,3 +1,4 @@
+----------------------- APPROCH 1 SPACE=O(N)------------------
 class Solution {
     public int maxProduct(int[] nums) {
         int []right=new int[nums.length];
@@ -27,5 +28,35 @@ class Solution {
             }
         }
         return ans;
+    }
+}
+
+
+-------------------------------CONSTANT SPACE ------------------------
+    class Solution {
+    public int maxProduct(int[] nums) {
+        int res=Integer.MIN_VALUE;
+        int ps=1;
+        for(int i=0;i<nums.length;i++)
+        {
+            ps*=nums[i];
+            res=Math.max(res,ps);
+            if(ps==0)
+            {
+                ps=1;
+            }
+        }
+       int ss=1;
+        for(int i=nums.length-1;i>=0;i--)
+        {
+             ss*=nums[i];
+            res=Math.max(res,ss);
+            if(ss==0)
+            {
+                ss=1;
+            }
+        }
+        
+        return res;
     }
 }
