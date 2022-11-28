@@ -5,7 +5,8 @@ class Solution {
             max=Math.max(val,max);
         }
         int hi=max; int lo=1;
-        while(lo<hi)
+        int minDiv=0;
+        while(lo<=hi)
         {
             int mid=(lo+hi)/2;
             int currSum=0;
@@ -15,13 +16,14 @@ class Solution {
             }
             if(currSum<=threshold)
             {
-                hi=mid;
+                minDiv=mid;
+                hi=mid-1;
             }
             else
             {
                 lo=mid+1;
             }
         }
-        return lo;
+        return minDiv;
     }
 }
