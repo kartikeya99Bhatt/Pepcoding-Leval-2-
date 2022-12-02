@@ -1,0 +1,39 @@
+ class Solution{
+    static long minTime(int[] arr,int n,int k){
+        //code here
+        long lo=0;long hi=0;
+        for(int val:arr){
+            lo=Math.max(lo,val);
+            hi+=val;
+        }
+        
+        while(lo<hi)
+        {
+            long mid=(lo+hi)/2;
+             long currPanter=1;
+             long paintedArea=0;
+             for(int val:arr)
+             {
+                 if(paintedArea+val>mid)
+                 {
+                     currPanter++;
+                     paintedArea=val;
+                 }
+                 else
+                 {
+                     paintedArea+=val;
+                 }
+             }
+             if(currPanter<=k)
+             {
+                 hi=mid;
+             }
+             else
+             {
+                 lo=mid+1;
+             }
+        }
+        return lo;
+        
+    }
+}
